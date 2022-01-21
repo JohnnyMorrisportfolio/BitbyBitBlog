@@ -1,7 +1,7 @@
 ﻿.container {
     display: flex;
     /*justify-content: center;*/
-    position: fixed;
-    left: 50%;
+    width: 10%;
     bottom: 20px;
+   
 }
