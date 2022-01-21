@@ -2,8 +2,8 @@
 
 }
 img {
-    float: right;
-    margin: 10px;
+    float: right; // this is a comment
+    margin: 103px;
     width: 200;
     height: 200;
 }
