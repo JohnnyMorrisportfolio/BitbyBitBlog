@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>5356d3b4-d0ea-4738-843f-cadcc6dd2f70</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="components\Blogpostpreview.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="components\Blogpostpreview.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\GitHub-Mark\.DS_Store" />
+    <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-120px-plus.png" />
+    <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-32px.png" />
+    <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-64px.png" />
+    <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-Light-120px-plus.png" />
+    <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-Light-32px.png" />
+    <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-Light-64px.png" />
+    <None Include="wwwroot\Images\GitHub-Mark\Vector\GitHub-Mark.ai" />
+    <None Include="wwwroot\Images\GitHub-Mark\Vector\GitHub-Mark.eps" />
+    <None Include="wwwroot\Images\twitter.png" />
+  </ItemGroup>
+
+</Project>
