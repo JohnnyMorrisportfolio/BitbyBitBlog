@@ -1,0 +1,35 @@
+﻿img {
+    float: left;
+    margin-right:100px;
+}
+.helloTextContainer{
+    padding-top:290px;
+}
+.nameTitle {
+    font-size: 50px;
+    
+}
+.surroundingTitle {
+    font-size:40px;
+    
+}
+.carouselTitle {
+    padding-bottom:160px;
+}
+.carouselContent {
+    text-align: center;
+}
+.bottomTitle {
+    color:#5d2b90;
+    font-weight:bold;
+}
+.clearfix {
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }

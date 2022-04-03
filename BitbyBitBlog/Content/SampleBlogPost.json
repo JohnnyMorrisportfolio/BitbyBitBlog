@@ -1,0 +1,17 @@
+{
+  "Title": "Blog Title",
+  "Id": 1,
+  "BlogText": "# Agenda\n## To do\nCreate a blogPost\n <img src=\"../Images/Johnny Port.jpg\"> his service will read JSON and create BlogPost \\nObjectsBlog Post Page(s)RoutingHardlinking  \\nFuture: Moving BlogPost to a database \\nCreate Play Ground Nav Menu Page \\nDarkMode  Better Homepage\\nProjects page\\nProjects in progress\\nProjects completed\"",
+  
+  "Images": [
+    "../images/Someimage.png",
+    "../images/Someimage.png"
+  ],
+  "BlogPostPreview": {
+
+    "Title": "Blog Title",
+    "ImageFilePath": "../Images/JBImage.png",
+    "BlogPostPreviewText": "SomeTextHere"
+  }
+}
+

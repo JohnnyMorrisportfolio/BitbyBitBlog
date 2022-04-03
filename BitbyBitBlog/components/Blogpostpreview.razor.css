@@ -1,11 +1,19 @@
 ﻿.previewContianer {
+    overflow:hidden;
 
 }
 img {
-    float: right; // this is a comment
-    margin: 103px;
-    width: 200;
-    height: 200;
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+ 
+}
+.blogPostPreviewText{
+    
+    padding-top:50px;
+   
+
 }
 
 

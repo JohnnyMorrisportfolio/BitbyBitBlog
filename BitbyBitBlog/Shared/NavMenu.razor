@@ -1,4 +1,7 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿@using BitbyBitBlog.Services.FileService
+@inject IJSRuntime js
+
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">BitbyBitBlog</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -12,11 +15,7 @@
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
+        
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="aboutme">
                 <span class="oi oi-person" aria-hidden="true"></span> About Me
@@ -28,8 +27,8 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            <NavLink @onclick="DownloadFile" class= "nav-link" href="">
+                <span class="oi oi-cloud-download" aria-hidden="true"></span> Resume
             </NavLink>
         </li>
     </ul>
@@ -44,4 +43,10 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    private async Task DownloadFile() {
+        var resumePath = "Content/Johnny Morris Resume 2021.pdf";
+        await FileService.SaveAs(js, resumePath);
+    }
 }
+

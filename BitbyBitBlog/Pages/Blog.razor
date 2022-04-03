@@ -1,12 +1,20 @@
 ﻿@page "/blog"
+@using BitbyBitBlog.Models
 @using BitbyBitBlog.components;
 
 <h3>Blog</h3>
-<div>   
-    <Blogpostpreview/>
+<div class="blogPosts"> 
+    
+    @foreach(BlogPost preview in blogpostpreviews)
+    {
+     <Blogpostpreview Id="@preview.Id" 
+     Title="@preview.Title"
+     ImageFilePath="@preview.BlogPostPreview.ImageFilePath"
+     Blogpostpreviewtext = "@preview.BlogPostPreview.BlogPostPreviewText">
+    </Blogpostpreview>
+    }
+
 
 </div>
 
-@code {
 
-}

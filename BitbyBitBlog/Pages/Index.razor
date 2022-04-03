@@ -1,7 +1,73 @@
 ﻿@page "/"
+@using BitbyBitBlog.components
+@using BlazorTypewriter
 
-<h1>Hello, world!</h1>
-Welcome to your new app.
+<div class="clearfix">
+    <img class= "logo" src="../Images/JBImage.png" style = "width: 500px; height: 500px;" />
+    <div class = "helloTextContainer">
+        <h1 class="surroundingTitle"> Hello</h1>
+        <h1 class="nameTitle"> Its Jonathan Morris</h1>
+        <h1 class="surroundingTitle, bottomTitle">
+            <Typewriter Builder="@typewriter" />
+        </h1>
+    </div>
+</div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<MudDivider />
+
+<h1 class="latestPostTitle"> Latest Post</h1>
+<LatestBlogPostPreview></LatestBlogPostPreview>
+
+<MudDivider />
+
+<MudCarousel Class="mud-width-full" Style="height:500px;" ShowArrows="@arrows" ShowBullets="@bullets" AutoCycle="@autocycle" TData="object">
+    <MudCarouselItem>
+        <div class="carouselContent">
+            <h1 class="carouselTitle">Object-Oriented Languages</h1>
+            <span class="carouselContent">
+                <img src="../Images/c-sharp-logo.png" width="200" height="200"/>
+            </span>
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem>
+        <div class="carouselContent">
+            <h1 class="carouselTitle">Frontend Frameworks</h1>
+            <span >
+                <img src="../Images/Blazor-logo.png" width="200" height="200"/>
+                <img src="../Images/Reactlogo.png" width="200" height="200"/>
+                <img src="../Images/html.png" width="200" height="200"/>
+            </span>
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem>
+        <div class="carouselContent">
+            <h1>Sales</h1>
+            <span>
+                <img src="../Images/tmob.png" width="400" height="200"/>
+                <img src="../Images/spectrum.png" width="500" height="200"/>
+                <img src="../Images/att.png" width="400" height="200"/>
+            </span>
+        </div>
+    </MudCarouselItem>
+</MudCarousel>
 <SocialMedia></SocialMedia>
+
+@code {
+    private bool arrows = true;
+    private bool bullets = true;
+    private bool autocycle = true;
+    private Transition transition = Transition.Slide;
+
+    TypewriterBuilder typewriter = new TypewriterBuilder(defaultCharacterPause: 6)
+        .TypeString("I'm A Junior Developer")
+        .Pause(1000)
+        .DeleteAll()
+        .TypeString("Career Changer.", 50)
+        .Pause(500)
+        .DeleteAll(30)
+        .TypeString("Business Sales Solutions Expert", 20)
+        .Pause(500)
+        .DeleteAll(20)
+        .Pause(500)
+        .Loop();
+}
