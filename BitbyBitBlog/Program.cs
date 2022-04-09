@@ -8,7 +8,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace BlazorServerApp
+namespace BitbyBitBlog
 {
     public class Program
     {
