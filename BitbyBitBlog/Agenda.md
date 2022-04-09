@@ -3,7 +3,7 @@
 - Create a blogPost
   2 blog post
 - Center Images in carousel & replace react logo
-- 
+- Get netlify to use the domains we bought
 
 Future:
 
