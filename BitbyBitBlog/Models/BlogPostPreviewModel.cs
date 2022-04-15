@@ -3,14 +3,11 @@ namespace BitbyBitBlog.Models
 {
     public class BlogPostPreviewModel
     {
-        
         [JsonPropertyName("Title")]
-        public string Title { get; set; }
-        
+        public string Title { get; set; } = "default title";
         [JsonPropertyName("ImageFilePath")]
-        public string ImageFilePath { get; set; }
-        
+        public string ImageFilePath { get; set; } = "../Images/noImageAvailable.png";
         [JsonPropertyName("BlogPostPreviewText")]
-        public string BlogPostPreviewText { get; set; }
+        public string BlogPostPreviewText { get; set; } = "default preview text";
     }
 }
