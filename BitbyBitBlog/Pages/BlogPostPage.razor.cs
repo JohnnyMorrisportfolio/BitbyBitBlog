@@ -2,6 +2,9 @@
 using BitbyBitBlog.Services.BlogPostDataService;
 using Microsoft.AspNetCore.Components;
 using System.IO;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 
 namespace BitbyBitBlog.Pages
 {
@@ -9,24 +12,26 @@ namespace BitbyBitBlog.Pages
     {
         [Parameter]
         public int Id { get; set; }
+        public BlogPost BlogPost { get; set; } = new();
+        [Inject]
+        private HttpClient  _client { get; set; }
 
-        public BlogPost BlogPost { get; set; }
-
-        protected override void OnInitialized()
+        protected async override Task OnInitializedAsync()
         {
-            var contentFiles = Directory.EnumerateFiles("Content/");
+            // TODO: this should get removed when we add the data service to the DI
+            // read all files in Content folder
+            // contentFiles = Directory.EnumerateFiles("Content/");
 
-            foreach (var path in contentFiles)
+            var files = await _client.GetFromJsonAsync<BlogToReadModel>("Content/BlogsToRead.json");
+
+            foreach (var blogFileName in files.blogs)
             {
-                var post = new BlogPostDataService(path).Read();
-                
-                if (post.Id == Id)
+                var blog = await _client.GetFromJsonAsync<BlogPost>($"Content/{blogFileName}");
+
+                if (blog.Id == Id)
                 {
-
-                    BlogPost = post;
-
+                    BlogPost = blog;
                 }
-
             }
         }
 

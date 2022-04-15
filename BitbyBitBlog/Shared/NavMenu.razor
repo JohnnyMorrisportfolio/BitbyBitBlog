@@ -39,14 +39,17 @@
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
+    [Inject]
+    private FileService fileService { get; set; }
+
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
 
-    private async Task DownloadFile() {
+    private async Task DownloadFile() 
+    {
         var resumePath = "Content/Johnny Morris Resume 2021.pdf";
-        await FileService.SaveAs(js, resumePath);
+        await fileService.SaveAsAsync(js, resumePath);
     }
 }
-

@@ -3,23 +3,30 @@ using BitbyBitBlog.Services.BlogPostDataService;
 using System.Collections.Generic;
 using System.IO;
 using BitbyBitBlog.Models;
+using Microsoft.AspNetCore.Components;
+using System.Threading.Tasks;
 
 namespace BitbyBitBlog.Pages
 {
     public partial class Blog
     {
-        private List<BlogPost> blogpostpreviews = new List<BlogPost>();
+        private List<BlogPost> blogPostPreviews = new List<BlogPost>();
+        [Inject]
+        private BlogPostDataService _blogService { get; set; }
 
-        //read all files in Content folder
-        protected override void OnInitialized()
+        protected async override Task OnInitializedAsync()
         {
-            var contentFiles = Directory.EnumerateFiles("Content/");
+            // read all files in Content folder
+            await _blogService.Initialize();
+            var files = _blogService.BlogsToRead;
 
-            foreach (var path in contentFiles)
+            foreach (var blogFileName in files.blogs)
             {
-                blogpostpreviews.Add(new BlogPostDataService(path).Read());
+                var blog = await _blogService.ReadAsync(blogFileName);
+                blogPostPreviews.Add(blog);
             }
         }
+
 
 
     }

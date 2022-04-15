@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Content\Johnny Morris Resume 2021.pdf" />
     <None Include="wwwroot\Images\GitHub-Mark\.DS_Store" />
     <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-120px-plus.png" />
     <None Include="wwwroot\Images\GitHub-Mark\PNG\GitHub-Mark-32px.png" />
@@ -31,9 +32,14 @@
     <None Include="wwwroot\Images\twitter.png" />
   </ItemGroup>
 
-<ItemGroup>
-	<Content Update="wwwroot_redirects">
-		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	</Content>
-</ItemGroup>
+	<ItemGroup>
+		<Content Update="wwwroot\Content*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</Content>
+
+		<Content Update="wwwroot_redirects">
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
 </Project>

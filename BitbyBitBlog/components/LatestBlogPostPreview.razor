@@ -1,5 +1,5 @@
-﻿<Blogpostpreview ImageFilePath="@(preview.ImageFilePath)" 
-Title="@(preview.Title)" 
-Blogpostpreviewtext="@(preview.BlogPostPreviewText)" 
-Id="@(blog.Id)">
+﻿<Blogpostpreview ImageFilePath="@(Preview.ImageFilePath ?? "../Images/noImageAvailable.png")" 
+Title="@(Preview.Title ?? "ERROR")" 
+Blogpostpreviewtext="@(Preview.BlogPostPreviewText ?? "text")" 
+Id="@(Blog.Id > 0 ? Blog.Id : -1)">
 </Blogpostpreview>
