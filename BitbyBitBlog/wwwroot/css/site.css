@@ -54,3 +54,18 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.carouselContent img {
+    width: 195px;
+    height: 700px;
+    object-fit:contain;
+    overflow:hidden;
+    object-position: center;
+    padding-bottom:20em;
+    padding-left: 4em;
+    padding-top:2em;
+    padding-right:-3em;
+    margin-right: 100px;
+    position:static;
+    
+}
